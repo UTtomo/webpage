@@ -1,0 +1,682 @@
+<?php
+/* Theme Name: Dream-Future
+Theme URI: http://dream-lab.moo.jp/
+Description: cool design
+Version: 1.0 */
+?>
+
+/* ------------------------------------------------------------ */
+/* general settings */
+/* ---------------------------------------------------------------- */
+
+
+body{
+  font-size: 16px;
+  /* background: url(http://dream-lab.moo.jp/wp-content/uploads/2018/11/logo-3.png); */
+  background-attachment: fixed;
+}
+
+.container{
+  padding-top: 0;
+}
+
+.container .insert{
+  /* margin-left: 5%; */
+}
+@media screen and (min-width:767px) {
+  .container .insert {
+    width: 100%;
+  }
+}
+h3{
+  font-size: 20px;
+  color: #111;
+  padding-top: 1em;
+}
+
+/* ----------------------------------------------------------------- */
+/* background image for text */
+/* ------------------------------------------------------------------------ */
+  /* #wrap {background:url(http://dream-lab.moo.jp/wp-content/uploads/2018/12/rect4129.png) center/cover no-repeat fixed} */
+
+  #wrap {background:none} /*PC用の背景はオフ*/
+  body::before {
+  content:"";
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  width:100%;
+  height:100vh;
+  /* background:url(http://dream-lab.moo.jp/wp-content/uploads/2018/12/rect4129.png) center/cover no-repeat;  */
+  -webkit-background-size:cover;/*Android4*/
+  }
+
+/* ------------------------------------------------------------------------------- */
+/* breadcrumbs */
+/* ------------------------------------------------------------------------------ */
+.breadcrumbs{
+  margin-bottom: 5px;
+}  
+
+.breadcrumbs span{
+    color: #111;
+    text-decoration: none;
+ }
+ @media screen and (max-width:567px) {
+  .breadcrumbs {
+    display:none;
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* header */
+/* --------------------------------------------------------------- */
+
+header .navbar{
+  box-shadow: 0 3px 3px #c7ab38;
+}
+header img{
+  padding-left: 1em;
+}
+.box{
+  width: 100%;
+  background-position: center;
+}
+
+
+header {
+  padding:10px;
+  text-align: right;
+}
+
+#nav-drawer {
+  position: relative;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+padding-top: .5em;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  background: #c8ab37;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 70%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 330px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: #f8f9fa;/*背景色*/
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+@media screen and (min-width:767px) {
+    #nav-open {
+      display:none;
+    }
+  }
+
+#nav-content a img{
+    margin-right: 5%;
+    padding-top: 0.5em;
+}
+
+.nav-page{
+    text-align: center;
+    margin: 2em 0em 2em; 
+    text-decoration: none;
+}
+.nav-page a{
+    color: black;
+    padding: 1em 5em 1em;
+}
+.nav-page a:hover{
+    color: aliceblue;
+    background-color: #68217a;
+    opacity: 0.3;
+}
+
+/* -------------------------------------------------------
+footer
+---------------------------------------------------------- */
+footer{
+  background-color: rgb(50, 50, 50);
+  padding: 0px 0px 0px 0px;
+ 
+}
+footer a{
+  color: rgb(240, 205, 124);
+}
+footer p, footer h5{
+  color: rgb(149, 147, 144);
+}
+.text-box img{
+margin-bottom: 2em;
+border-radius: 50%;
+border: solid 2px #777;
+}
+.text-box figcaption dl p{
+  color: #232323;
+
+}
+
+
+/* ----------------------------------------------- */
+/* front page */
+/* --------------------------------------------------- */
+.jumbotron{
+padding-top: 0px;
+background: url(http://dream-lab.moo.jp/wp-content/uploads/system/i.jpg);
+background-size: cover;
+background-position: 50% 50%;
+height: 100vh;
+min-height: 300px;
+}
+.a_row{
+display: inline-block;
+}
+.a_row h5{
+vertical-align: bottom;
+}
+#list1{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/1.png);
+  background-size:cover;
+}
+#list2{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/2.png);
+  background-size:cover;
+}
+#list3{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/3.png);
+  background-size:cover;
+}
+#list4{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/4.png);
+  background-size:cover;
+}
+#list5{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/5.png);
+  background-size:cover;
+}
+#list6{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/6.png);
+  background-size:cover;
+}
+#list7{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/7.png);
+  background-size:cover;
+}
+.card{
+color: white;
+}
+.explanation img{
+  text-align: center;
+  margin: 20px 0 40px;
+}
+.explanation {
+  margin-top: 10%;
+}
+
+@media screen and (max-width:767px) {
+  .explanation img {
+    width: 100%;
+  }
+  .explanation .lead{
+    font-size: 13px;
+  }
+}
+
+
+/* ------------------------------------- */
+/* our policy */
+/* -------------------------------------- */
+.opa{
+  background-color: rgba(0,0,0,0.4)
+}
+.opa p:not(.column){
+  color: #fff;
+}
+
+.bc-image{
+  background: url(http://dream-lab.moo.jp/wp-content/uploads/system/j.jpg);
+}
+.column{
+  background-color: rgba(213,246,255,0.7);
+  color: #111;
+}
+
+
+
+/*---------------------------------------------------------*/
+/* Sidebar */
+/*---------------------------------------------------------*/
+.sidebar-wrapper {
+	margin: 0 0 15px 0;
+}
+.sidebar-title {
+	border-left: solid 10px #c7ab38;
+	font-size: 1.2em;
+	padding: 10px 0 10px 20px;
+	margin: 8px 0;
+	color: #555;
+	border-top: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+}
+.textwidget {
+	padding: 0 8px;
+}
+#calendar_wrap {
+	text-align: center;
+}
+#calendar_wrap table {
+	margin-left: auto;
+	margin-right: auto;
+}
+#calendar_wrap table a {
+	text-decoration: underline;
+	color: #2ea7e0;
+}
+#calendar_wrap table a:hover {
+	background-color: #2ea7e0;
+	color: #fff;
+}
+.sidebar-wrapper ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.sidebar-wrapper li {
+	border-bottom: dotted 1px #c7ab38;
+}
+.sidebar-wrapper li a {
+	display: block;
+	color: #555;
+	padding: 3px 0 3px 8px;
+}
+.sidebar-wrapper li a:hover {
+	background-color: #d5d5ff;
+}
+
+
+/* -------------------------------------------- */
+/* topics */
+/* ------------------------------------------------ */
+.text-contents{
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.blog-card{
+  height: 330px;
+  text-align: center;
+  border-radius: 3%;
+  background-color: #fafafa;
+  border: 0.5px #666666 solid;
+  margin-bottom: 1em;
+  margin-left: 0;
+  box-shadow: 4px 4px #aaaaaa;
+}
+.blog-card p{
+  color: #232323;
+}
+
+.blog-cat{
+  float:right;
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+}
+.blog-title{
+  text-decoration: none;
+  font-size: 20px;
+  color: #111;
+  font-weight: 150;
+}
+
+.imagebox img{
+  padding-top: 0.5em;
+  width: 250px;
+  height: 150px;
+  border-radius: 3% 0 0 3%;
+}
+
+.alignnore{
+  text-align: center;
+}
+.attachment-thumbnail{
+  border: outset 2px #eeeeee;
+}
+.cssgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 0.8em;
+  border: 1px solid #ddd;
+  padding: 0.8em;
+  margin: 0 0 2em;
+}
+
+.cssgrid > div {
+  overflow: auto;
+  min-width: 0;
+  /* padding: 1em; */
+}
+
+.textbox .blog-link{
+  color: #fff;
+  background-color: #aaa;
+}
+
+/* --------------------------------------------------------
+post
+-------------------------------------------------------- */
+.line{
+  background-image: url(https://dream-lab.club/wp-content/uploads/2019/02/g1118.png);
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 0;
+  left: 100%;
+  width: 105px; /* 画像の幅 */
+  height: 141px; /* 画像の高さ */
+  margin-left: -100%;
+}
+.blog-card-post{
+  /* height: 330px; */
+  text-align: center;
+  border-radius: 3%;
+  background-color: #fafafa;
+  border: 0.5px #666666 solid;
+  margin-bottom: 1em;
+  margin-left: 0;
+  box-shadow: 4px 4px #aaaaaa;
+}
+.blog-card-post p{
+  color: #232323;
+}
+
+.blog-card-post a {
+  text-decoration: none;
+}
+.blog-card-post:hover {
+  background: #e6f4ff;
+}
+
+.info{
+text-align: right;
+}
+.post h1{
+  padding-top: 15px;
+  text-align: center;
+  font-size: 28px;
+  color: #000;
+}
+.post h2{
+  background-color: #f7f7f7 ;
+  border-style: solid;
+  border-color: #f7f7f7 #f7f7f7 #dadada rgb(85,85,225);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  font-size: 24px;
+  margin-top: 2em;
+}
+.post h3{
+  border-style: solid;
+  border-color: #f7f7f7 #f7f7f7 #f7f7f7 rgb(153,85,225);
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.5em;
+  font-size: 21px;
+  margin-top: 1em;
+}
+.post h4{
+ font-size: 15px;
+}
+ul{
+  list-style: none;
+  margin-left: 0px; 
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.post ul li{
+  padding: 3px 3px 0px 3px;
+}
+ul a{
+  padding: 5px 0px 5px 0px;
+}
+ul a :hover{
+  opacity: 0.8;
+}
+.sns{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.container img{
+  text-align: center;
+}
+
+.post p{
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding: 1em 1em;
+  margin-bottom: 0;
+}
+.imagine{
+  background-color:  rgba(213,246,255);
+}
+
+
+.ref p{
+  font-size: 11px;
+}
+
+/* next page link */
+.next-page-link {
+  width:100%;
+  margin: 40px 0 10px 0;
+  padding: 8px 0 8px 0;
+  text-align:center;
+  border-radius:30px;
+  background: #333;
+}
+.next-page-link a {
+  display:block;
+  margin:5px 0;
+  color: #fff;
+  text-decoration:none;
+}
+.next-page-link:hover {
+  background: #555;
+}
+.page-link{
+  margin: 10px 0 40px 0;
+  text-align:center;
+}
+.comment-page-link{
+  margin: 1em 1em 3em;
+  text-align: center;
+}
+.page-link span,
+.comment-page-link span,
+.comment-page-link a{
+  margin-right: 3px;
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  background: #ddd;
+  border-radius:5px;
+}
+.page-link a span,
+.comment-page-link a{
+  background: #fff;
+  color:#000;
+}
+.page-link a{
+  border-bottom: none;
+  color: #000;
+  text-decoration:none;
+}
+ 
+.page-link a span:hover,
+.comment-page-link a:hover{
+  background: #eee;
+  color: #000;
+}
+.previous, .next{ 
+  height: 125px;
+  background-color: #fefefe;
+  margin: 0 0 40px 0;
+  color: #232323;
+  padding: 4px 0 4px 0;
+  border-top: solid 2px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 3%;
+}
+.previous a, .next a{
+  padding: 3px 3px 5px 3px;
+  color: #232323;
+}
+@media screen and (max-width:767px) {
+.previous, .next{
+  width: 90%;
+  margin-left: 5%;
+}
+}
+.post-info{
+  padding: 10px 3px 15px 3px;
+}
+
+/*-------------------------
+  ブログカード
+-------------------------*/
+
+.blog-card {
+  background: #fbfaf8;
+	border:1px solid #ddd;
+	word-wrap:break-word;
+	max-width:100%;
+	border-radius:5px;
+  margin: 5px 20px 0px 20px;
+  margin: 5px 16px 0px 16px;
+  color: #232323;
+  
+  /* sp用 ※4 */
+}
+.blog-card:hover {
+  background: #e6f4ff;
+}
+.blog-card a {
+  text-decoration: none;
+}
+.blog-card-title {
+	color: #337ab7;
+	display: block;
+}
+.blog-card-thumbnail {
+	float:left;
+	padding:10px 10px 0 10px;
+}
+.blog-card-thumbnail img {
+  border-radius: 5%;
+	display: block;
+	padding: 0;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+.blog-card-content {
+	line-height:120%;
+}
+.blog-card-title {
+	padding:10px 10px 10px 0;
+	font-size:120%;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+.blog-card-excerpt {
+	color:#333;
+	margin:0 10px 10px;
+  line-height: 1.5em;
+}
+.blog-card .clear {
+  clear: both;
+}
+.clear{
+  font-size: 10px;
+  color: #999;
+  text-align: left;
+  padding-left: 6px;
+}
+/* relavant */
+
+/* ------------------------------------------------
+category
+---------------------------------------------------- */
+.cat-title ul{
+  list-style: none;
+}
+.cat-title ul a{
+  color: #000;
+}
+
+.cat-title ul h3{
+  color: #000;
+}
